@@ -1,0 +1,22 @@
+@import './styles/icons/font-awesome/all.css';
+
+:root {
+    --black: #111111;
+    --white: #fff;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-display: swap;
+    // font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}

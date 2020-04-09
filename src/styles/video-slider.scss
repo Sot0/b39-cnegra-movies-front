@@ -1,0 +1,13 @@
+.video-slider {
+    background-color: var(--black);
+}
+
+.video-slider .react-multiple-carousel__arrow--right {
+    outline: none;
+    right: 0.5rem;
+}
+
+.video-slider .react-multiple-carousel__arrow--left {
+    left: 0.5rem;
+    outline: none;
+}
