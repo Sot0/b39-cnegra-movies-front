@@ -1,34 +1,17 @@
 @import './breackpoints.scss';
 
 .video-item {
-  cursor: pointer;
-  margin: 0rem;
-  padding: 0rem;
-  width: 31vw;
-  height: 10rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   
   @include respond-to('medium') {
-    width: 23vw;
-    height: 15rem;
   }
 
   @include respond-to('large') {
-    width: 19vw;
-    height: 19rem;
   }
 
   @include respond-to('xlarge') {
-    width: 19vw;
-    height: 20rem;
   }
 
   &:hover {
-    z-index: 1;
+
   }
 }

@@ -35,18 +35,14 @@ const responsive = {
 const VideoSlider = ({data, categoryName = 'Fantasía'}) => {
     return (
       <Fragment>
-      <Carousel removeArrowOnDeviceType={["tablet", "mobile"]} partialVisible={true} 
+        <Carousel removeArrowOnDeviceType={["tablet", "mobile"]} partialVisible={true} 
               responsive={responsive} className="video-slider">
                   {
                       data.getMovies.map(item => <VideoItem movieData={item} key={item._id}/>)
                   }
-              </Carousel>
+        </Carousel>
       </Fragment>
     );
 }
-
-const CustomLeftArrow = () => {
-  return <i className="fas fa-arrow-alt-circle-left" style={{color:'var(--white)', fontSize: '2rem', position: 'absolute', right:'1rem'}}></i>
-};
 
 export default VideoSlider;
