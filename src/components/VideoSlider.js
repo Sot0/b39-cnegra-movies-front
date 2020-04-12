@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Row, Col } from 'reactstrap';
+// import { Row, Col } from 'reactstrap';
 import Carousel from "react-multi-carousel";
 import '../styles/video-slider.scss';
 import "react-multi-carousel/lib/styles.css";
@@ -9,36 +9,37 @@ import VideoItem from './VideoItem';
 const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      breakpoint: { max: 4000, min: 1025 },
+      items: 6,
       slidesToSlide: 3,
       partialVisibilityGutter: 15
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 1024, min: 769 },
       items: 5,
       slidesToSlide: 3,
-      partialVisibilityGutter: 10
+      partialVisibilityGutter: 20
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 768, min: 465 },
       items: 4,
       partialVisibilityGutter: 15
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 3,
+      items: 2,
       partialVisibilityGutter: 10
     }
   };
 
-const VideoSlider = ({data, categoryName = 'Fantasía'}) => {
+const VideoSlider = ({listMovies, categoryName}) => {
     return (
       <Fragment>
-        <Carousel removeArrowOnDeviceType={["tablet", "mobile"]} partialVisible={true} 
+        <h1 className="slider-title">{categoryName}</h1>
+        <Carousel removeArrowOnDeviceType={["tablet"]} partialVisible={true} 
               responsive={responsive} className="video-slider">
                   {
-                      data.getMovies.map(item => <VideoItem movieData={item} key={item._id}/>)
+                      listMovies.map(item => <VideoItem movieData={item} key={item._id}/>)
                   }
         </Carousel>
       </Fragment>

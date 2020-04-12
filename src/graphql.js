@@ -10,7 +10,7 @@ const httpLink =  createHttpLink({
 });
 
 const authLink = setContext((_, {headers}) => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC50ZXN0IiwiZmlyc3RfbmFtZSI6Ikh1Z28iLCJpYXQiOjE1ODYzNjc0NDYsImV4cCI6MTU4NjQ1Mzg0Nn0.hQB5e0L7F-ycQy4KCcab7NZkny48WGNs9btFO5c0KwU' || sessionStorage.getItem('netflixToken')
+    const token = sessionStorage.getItem('notNameToken')
     const context = {
         headers: {
             ...headers

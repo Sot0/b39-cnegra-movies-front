@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import client from './graphql';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.scss';
+import "video-react/dist/video-react.css";
 import Routes from './Routes';
 
 ReactDOM.render(

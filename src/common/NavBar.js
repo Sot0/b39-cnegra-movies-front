@@ -1,34 +1,14 @@
-import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import React from 'react';
+import { Navbar, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Media, NavbarBrand } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { useQuery } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
+import '../styles/navbar.scss';
 
-import logoNetflix from '../assets/img/logo-netflix.png';
+import authenticate from '../utils/authenticate';
+
+import logo from '../assets/img/logo.png';
 import profileDefault from '../assets/img/profile-default.jpg';
-
-const styles = {
-  logo: {
-      maxWidth: '8rem'
-  },
-  profilePicture: {
-    maxWidth: '3rem'
-  },
-  navbar: {
-    background: '#000',
-    padding: '0rem 1rem'
-  },
-  dropdownToggle: {
-    padding: '0rem 0rem 0.6rem 0rem',
-  },
-  username: {
-    color: '#fff',
-    margin: '0rem 1rem 0rem 0rem'
-  },
-  noMarginNoPadding: {
-    padding: '0rem',
-    margin: '0rem'
-  }
-};
 
 const QUERY_ME = gql`
   query me {
@@ -41,36 +21,28 @@ const QUERY_ME = gql`
 `;
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticate, payload } = authenticate();
 
-  const toggle = () => setIsOpen(!isOpen);
-
-  const { data, loading, error } = useQuery(QUERY_ME);
+  const { data } = useQuery(QUERY_ME);
 
   return (
-    <Navbar style={styles.navbar} expand="sm">
-        <NavbarBrand href="/"><img src={logoNetflix} alt="Netflix" style={styles.logo}/></NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/">Catálogo</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/">Mi Lista</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-        <NavbarText style={styles.username}>{data ? data.me.first_name : null}</NavbarText>
-        <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret style={styles.dropdownToggle}>
-            <img src={data ? data.me.profile_pic ? data.me.profile_pic: profileDefault : profileDefault} alt="Perfil" style={styles.profilePicture}/>
-          </DropdownToggle>
-          <DropdownMenu right style={styles.noMarginNoPadding}>
-            <DropdownItem>Mi perfil</DropdownItem>
-            <DropdownItem>Cerrar sesión</DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown>
+    <Navbar className="navbar" >
+      <NavbarBrand href="/">
+        <Media className="logo" src={logo} />
+      </NavbarBrand>
+      <Link to="/" className="link">Explorar</Link>
+      <Link to="/favorites" className="link">Mis favoritos</Link>
+      <UncontrolledDropdown nav inNavbar >
+        <DropdownToggle nav caret >
+          <img className="profile-pic" src={payload.profile_pic || profileDefault} alt="Perfil" />
+        </DropdownToggle>
+        <DropdownMenu right >
+          <DropdownItem >{payload.first_name}</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem ><Link to="/me" className="link">Mi perfil</Link></DropdownItem>
+          <DropdownItem ><Link to="/logout" className="link">Cerrar sesión</Link></DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
     </Navbar>
   );
 }

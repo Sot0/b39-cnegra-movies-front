@@ -1,0 +1,71 @@
+.navbar {
+    background-color: var(--gray);
+    margin: 0rem;
+    padding: 0.5rem 1rem;
+    justify-content: flex-start;
+
+    .link {
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0rem 1rem;
+        color: var(--blue-primary);
+
+        &:hover {
+            color: var(--blue-secondary);
+        }
+    }
+
+    .navbar-brand {
+        margin: 0rem;
+        padding: 0rem;
+    }
+
+    .logo {
+        max-width: 4rem;
+        cursor: pointer;
+    }
+
+    .profile-pic {
+        max-height: 3rem;
+        margin: 0rem;
+    }
+}
+
+.navbar .dropdown-menu {
+    outline: none;
+    background-color: var(--gray);
+
+    .dropdown-item {
+        outline: none;
+    }
+}
+
+.navbar .dropdown {
+    list-style: none;
+    outline: none;
+    position: absolute;
+    right: 0.5rem;
+
+    .dropdown-item {
+        text-align: end;
+        
+        &:hover {
+            background-color: var(--blue-primary);
+            color: var(--gray);
+        }
+        &:active {
+            
+            background-color: var(--blue-primary);
+            outline: none;
+        }
+        &:first-child {
+            pointer-events: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+}
+
+.navbar .nav-link {
+    padding: 0rem;
+}

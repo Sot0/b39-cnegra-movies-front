@@ -1,0 +1,62 @@
+.modal {
+    background-color: var(--blue-primary);
+}
+
+.video-details {
+    border-radius: 2rem;
+
+    .modal-content {
+        background-color: var(--gray);
+        border-radius: 2rem;
+        padding: 0rem 1rem;
+        
+        .modal-header {
+            padding: 0.5rem 1rem;
+            
+
+            .close {
+                margin: 0rem;
+                padding: 0rem;
+            }
+        }
+    }
+
+
+    .row-information {
+        padding: 1rem 0rem 0rem 0rem ;
+        .cover {
+            object-fit: cover;
+            object-position: center;
+            max-width: 100%;
+            width: 7rem;
+            height: 7rem;
+        }
+
+        .col {
+            padding: 0rem;
+        }
+    
+        .text {
+            margin: 0rem;
+            color: var(--gray-dark);
+        }
+    
+        .title {
+            color: var(--blue-primary);
+            font-weight: bold;
+        }
+    
+        .like-column {
+            text-align: center;
+            .like-number {
+                background-color: var(--blue-secondary);
+                border-radius: 2rem;
+                width: fit-content;
+                padding: 0rem 1rem;
+                margin: 0rem auto;
+                color: var(--gray);
+            }
+        }
+    }
+
+}

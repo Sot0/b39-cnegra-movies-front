@@ -1,0 +1,62 @@
+@import './breackpoints.scss';
+
+.login-container {
+    background-color: var(--blue-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-container .form {
+    border-radius: 0rem 0rem 2rem 2rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--gray);
+    @include respond-to('large') {
+        border-radius: 0rem 2rem 2rem 0rem;
+        padding: 2rem 4rem;
+    }
+}
+
+.login-container .information {
+    padding: 0rem;
+    background-image: url(../assets/img/pokemon-poster.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    border-radius: 2rem 2rem 0rem 0rem;
+    color: var(--white);
+    text-align: center;
+    @include respond-to('large') {
+        border-radius: 2rem 0rem 0rem 2rem;
+    }
+}
+
+.login-container .information .background {
+    padding: 1rem 1.5rem;
+    background-color: var(--blue-primary-opacity);
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem 2rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0rem;
+    @include respond-to('medium') {
+        padding: 4rem 0rem;
+    }
+    @include respond-to('large') {
+        border-radius: 2rem 0rem 0rem 2rem;
+        padding: 0rem 2rem;
+    }
+}
+
+.login-container .logo {
+    max-width: 40%;
+    @include respond-to('large') {
+        max-width: 70%;
+        margin: 0rem 4rem;
+    }
+}

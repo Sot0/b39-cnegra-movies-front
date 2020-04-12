@@ -1,0 +1,24 @@
+@import './breackpoints.scss';
+
+.nav-tab {
+    border-bottom: 1px solid var(--blue-primary);
+    display: flex;
+    justify-content: center;
+    color: var(--blue-primary);
+    margin-bottom: 1rem;
+    @include respond-to('medium') {
+        
+    }
+}
+
+.nav-tab .nav-link:hover {
+    border-bottom: 1px solid var(--blue-primary);
+    cursor: pointer;
+}
+
+.nav-tab .nav-link.active {
+    border-bottom: 1px solid var(--blue-primary);
+    background-color: var(--blue-primary);
+    color: var(--white);
+    font-weight: bold;
+}

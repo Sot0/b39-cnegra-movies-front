@@ -1,23 +1,33 @@
-import React, { Fragment } from 'react';
-import {Redirect, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import {Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import Home from './views/Home';
+import Login from './views/Login';
 import NotFound from './views/NotFound';
-import NavBar from './common/NavBar';
 
+const Logout = () => {
+    sessionStorage.removeItem('notNameToken');
+    return <Redirect to="login"/>
+}
+
+const Me = () => {
+    return null
+}
 
 const Routes = () => {
     return (
-        <Fragment>
-            <NavBar/>
+        <BrowserRouter>
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route path='/about'>
-                    <Redirect to='/'/>
-                </Route>
-                <Route path="*" component={NotFound} />
+                <Route exact path='/login' component={Login}/>
+                <Route exact path='/favorites' component={Home}/>
+                <Route exact path='/me' component={Me}/>
+                <Route exact path='/logout' component={Logout}/>
+                <Route path='*' component={NotFound} />
             </Switch>
-        </Fragment>
+        </BrowserRouter>
     );
 };
 
 export default Routes;
+
+{/* <Route exact path='/' component={authHOC(Home)} /> */}

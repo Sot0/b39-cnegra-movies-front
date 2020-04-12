@@ -3,6 +3,20 @@
 :root {
     --black: #111111;
     --white: #fff;
+    --white-background: #eeecf3;
+    --primary-purple: #413255;
+    --primary-purple-opacity: #41325559;
+    --secondary-purple: #b796ac;
+    --gray-opacity: #6a748f69;
+
+    --orange: #de7119;
+    --gray: #f1f1f1;
+    --gray-dark: #4e4e4e;
+    --blue-primary: #116979;
+    --blue-secondary: #18b0b0;
+    --orange-hover: #bd5e10;
+    --orange-active: #dd6f14;
+    --blue-primary-opacity: #11697950;
 }
 
 html,
@@ -11,6 +25,8 @@ body {
 }
 
 body {
+    background-color: var(--gray);
+    color: var(--gray-dark);
     font-display: swap;
     // font-family: 'Lato', sans-serif;
     font-style: normal;
@@ -19,4 +35,19 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
+}
+
+.btn-custom {
+    color: var(--gray);
+    font-weight: bold;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    padding: 0.4rem 2rem;
+}
+
+.btn-custom:hover {
+    background-color: var(--blue-primary);
+    color: var(--gray);
 }

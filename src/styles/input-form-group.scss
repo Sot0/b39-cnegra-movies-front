@@ -1,0 +1,15 @@
+.form-group .label {
+    font-weight: bold;
+    color: var(--blue-primary);
+}
+
+.form-group .input {
+    color: var(--blue-primary);
+    outline-color: var(--gray);
+}
+
+.signup-form .input:focus {
+    box-shadow: 0 0 3px var(--blue-primary) !important;
+    -moz-box-shadow: 0 0 3px grvar(--blue-primary)een !important;
+    -webkit-box-shadow: 0 0 3px var(--blue-primary) !important;
+}
