@@ -32,11 +32,9 @@
 
     .card-body {
         padding: 0.5rem 0rem;
-        // margin: 0rem auto;
         padding: 0rem 1rem;
 
         @include respond-to('medium') {
-            // margin: 0rem auto;
             padding: 0rem 0.5rem;
         }
         @include respond-to('large') {
@@ -54,16 +52,6 @@
 
         .card-subtitle {
             font-size: 0.8rem;
-        }
-
-        .card-text {
-            font-size: 0.8rem;
-            .likes {
-                border-radius: 1rem;
-                padding: 0rem 0.8rem;
-                color: var(--gray);
-                background-color: var(--blue-secondary);
-            }
         }
     }
 }

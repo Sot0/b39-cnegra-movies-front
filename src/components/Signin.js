@@ -19,7 +19,7 @@ const Signin = ({history}) => {
     const [sendLogin] = useMutation(LOGIN);
 
     const catchData = async (inputs) => {
-        const { data, loading, error} = await sendLogin({variables: {...inputs}});
+        const { data, error} = await sendLogin({variables: {...inputs}});
         
         if(error) {
             alert('Error al iniciar sesión');

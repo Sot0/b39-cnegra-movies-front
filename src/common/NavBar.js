@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Media, NavbarBrand } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { useQuery } from 'react-apollo-hooks';
-import gql from 'graphql-tag';
 import '../styles/navbar.scss';
 
 import authenticate from '../utils/authenticate';
@@ -10,20 +8,8 @@ import authenticate from '../utils/authenticate';
 import logo from '../assets/img/logo.png';
 import profileDefault from '../assets/img/profile-default.jpg';
 
-const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      profile_pic
-      first_name
-    }
-  }
-`;
-
 const NavBar = () => {
-  const { isAuthenticate, payload } = authenticate();
-
-  const { data } = useQuery(QUERY_ME);
+  const { payload } = authenticate();
 
   return (
     <Navbar className="navbar" >

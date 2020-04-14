@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+// always receive a callback
+
 const useForm = (callback, current= {}) => {
     const [ inputs, setInputs] = useState(current);
 

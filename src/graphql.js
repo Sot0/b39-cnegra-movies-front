@@ -3,7 +3,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-const API_URL = process.env.LINK_BACKEND || 'http://localhost:4000/';
+const API_URL = process.env.LINK_BACKEND || 'https://b39-backend-netflix.herokuapp.com/';
 
 const httpLink =  createHttpLink({
     uri: API_URL

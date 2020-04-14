@@ -28,11 +28,11 @@ const Home = () => {
 
     if(error) return <h1>Hubo un error, intenta recargando</h1>
 
-const getMoviesByCategory = () =>{
-    return categories.map( (categoryName, i) => {
-        const categoryNameWithoutAcents = categoryName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(    );
+    const getMoviesByCategory = () =>{
+        return categories.map( (categoryName, i) => {
+            const categoryNameWithoutAcents = categoryName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(    );
 
-        const listMovies = data.getMovies.filter(movie => {
+            const listMovies = data.getMovies.filter(movie => {
             if (movie.categories.includes(categoryNameWithoutAcents)) return movie
             return null
         });

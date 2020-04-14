@@ -19,7 +19,7 @@ const Routes = () => {
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/login' component={Login}/>
-                <Route exact path='/favorites' component={Home}/>
+                {/* <Route exact path='/favorites' component={Home}/> */}
                 <Route exact path='/me' component={Me}/>
                 <Route exact path='/logout' component={Logout}/>
                 <Route path='*' component={NotFound} />
@@ -30,4 +30,4 @@ const Routes = () => {
 
 export default Routes;
 
-{/* <Route exact path='/' component={authHOC(Home)} /> */}
+/* <Route exact path='/' component={authHOC(Home)} /> */

@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import {
-  Card, CardImg, CardText, CardBody,
+  Card, CardImg, CardBody,
   CardTitle, CardSubtitle
 } from 'reactstrap';
 
@@ -19,7 +19,6 @@ const VideoItem = ({movieData}) => {
         <CardBody>
           <CardTitle>{movieData.title}</CardTitle>
           <CardSubtitle>{movieData.created_by}</CardSubtitle>
-          <CardText>Me gusta <span className="likes">{movieData.liked_by? movieData.liked_by.lenght: 0}</span></CardText>
         </CardBody>
       </Card>
       <VideoDetail modalOpen={modalOpen} toggleModal={toggleModal} movieData={movieData}/>
